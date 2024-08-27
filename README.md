@@ -10,13 +10,11 @@ Custom Prompts: Ability to specify custom prompts and transformation instruction
 
 ## Installation
 First, ensure you have the necessary dependencies installed:
-
-bash
-Copy code
+`
 pip install ../input/hf-peft/peft-0.9.0-py3-none-any.whl
 pip install ../input/bitsandbytes/bitsandbytes-0.42.0-py3-none-any.whl
 pip install ../input/transformers-4-39-2/transformers-4.39.2-py3-none-any.whl
-
+`
 ## Usage
 Prepare Your Environment
 
@@ -26,9 +24,9 @@ Run the Script
 
 Execute the script with the desired parameters. Here is an example command:
 
-bash
-Copy code
+`
 python run.py --model_path /path/to/model --peft_path /path/to/peft --model_type "mistral" --output "predictions.json" --max_len 512 --test_path ./test.csv --quantize --prime "It's likely that the prompt that transformed original_text to new_text was: Rewrite" --magic ""
+`
 Replace the placeholders with appropriate paths and parameters:
 
 --model_path: Path to the pre-trained model.
@@ -45,19 +43,16 @@ Replace the placeholders with appropriate paths and parameters:
 ## Combine Predictions
 
 After running the script, combine the predictions from multiple models if needed:
-
-python
-Copy code
 fns = ["pred0.json", "pred1.json"]
 preds = [json.load(open(x)) for x in fns]
 preds = [' '.join(list(x)) for x in zip(*preds)]
 print(preds[:2])
-Code Description
+
+## Code Description
 run.py: Main script for loading models, running predictions, and saving results.
 predict_gemma: Function for predicting with the Gemma model.
 predict_mistral: Function for predicting with the Mistral model.
-Contributing
-Feel free to contribute to this project by submitting pull requests or issues. For feature requests and bug reports, please use the GitHub Issues page.
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
