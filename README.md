@@ -10,11 +10,19 @@ Custom Prompts: Ability to specify custom prompts and transformation instruction
 
 ## Installation
 First, ensure you have the necessary dependencies installed:
+
 `
 pip install ../input/hf-peft/peft-0.9.0-py3-none-any.whl
+`
+
+`
 pip install ../input/bitsandbytes/bitsandbytes-0.42.0-py3-none-any.whl
+`
+
+`
 pip install ../input/transformers-4-39-2/transformers-4.39.2-py3-none-any.whl
 `
+
 ## Usage
 Prepare Your Environment
 
@@ -27,6 +35,7 @@ Execute the script with the desired parameters. Here is an example command:
 `
 python run.py --model_path /path/to/model --peft_path /path/to/peft --model_type "mistral" --output "predictions.json" --max_len 512 --test_path ./test.csv --quantize --prime "It's likely that the prompt that transformed original_text to new_text was: Rewrite" --magic ""
 `
+
 Replace the placeholders with appropriate paths and parameters:
 
 --model_path: Path to the pre-trained model.
